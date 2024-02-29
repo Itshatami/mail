@@ -16,8 +16,8 @@
         </style>
     </head>
     <body class="antialiased">
-        <h1 class="border-secondary">
-         کد ورود شما : 202033
+        <h1 class=" bg-danger">
+            {{ $user->password }}
         </h1>
     </body>
 </html>
