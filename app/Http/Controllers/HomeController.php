@@ -15,4 +15,13 @@ class HomeController extends Controller
 
         return view('welcome');
     }
+
+
+    //     public function activate($id)
+    //     {
+    //         $mymodel = MyModel::find($id);
+
+    //         $contact = Contact::where('mymodel_id', $mymodel->id)->first();
+    //         Mail::to($contact->email)->send(new MyMail($contact));
+    //     }
 }
