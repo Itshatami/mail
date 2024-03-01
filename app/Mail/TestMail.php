@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -39,10 +40,9 @@ class TestMail extends Mailable
      */
     public function content(): Content
     {
-        // dd('content');
         return new Content(
-            view: 'emails.verify'
-            // text: 'mail.orders.shipped-text'
+            view: 'emails.verify',
+            // text: 'emails.verify'
         );
     }
 
@@ -53,6 +53,8 @@ class TestMail extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        return [
+            Attachment::fromPath(storage_path('app/public/pic.jpg'))
+        ];
     }
 }

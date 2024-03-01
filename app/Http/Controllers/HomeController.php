@@ -14,7 +14,6 @@ class HomeController extends Controller
         // Mail::send(new TestMail());
         $user = User::find(1);
         Mail::to($user->email)->send(new TestMail($user));
-
         return view('welcome');
     }
 
